@@ -4,6 +4,8 @@ const helloWorld = require('./routes/helloWorld/helloWorld');
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+
 app.use('/poc/hello-world', helloWorld);
 
 app.listen(port, () => {

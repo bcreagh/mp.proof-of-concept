@@ -4,22 +4,25 @@ const fs = require('fs');
 const GetResponse = require('../../domain/httpResponses/getResponse');
 const PostResponse = require('../../domain/httpResponses/postResponse');
 const Stopwatch = require('../../commonUtilities/stopwatch');
+const Logger = require('../../commonUtilities/logger/logger');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
+    Logger.log('Handling the GET request');
     const result = new GetResponse();
     const readme = fs.readFileSync('./src/routes/helloWorld/helloWorld.md', 'utf8');
-    // result.readme = '# Hello world \n This is the hello world route!';
     result.readme = readme;
     res.json(result);
 });
 
 router.post('/', (req, res) => {
-    const stopwatch = new Stopwatch();
-    stopwatch.start();
-    const input = req.body.input;
     const result = new PostResponse();
+    const stopwatch = new Stopwatch();
+    const input = req.body.input;
+
+    Logger.log('Handling the POST request', result);
+    stopwatch.start();
     result.input = input;
     result.output = `Hello ${input}`;
     const performance = stopwatch.stop();

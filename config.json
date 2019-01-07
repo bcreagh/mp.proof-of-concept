@@ -1,0 +1,6 @@
+{
+    "routes": [
+        "hello-world"
+    ],
+    "port": 3000
+}

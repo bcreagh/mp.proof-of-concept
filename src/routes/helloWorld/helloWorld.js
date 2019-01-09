@@ -3,6 +3,7 @@ const fs = require('fs');
 
 const GetResponse = require('../../domain/httpResponses/getResponse');
 const PostResponse = require('../../domain/httpResponses/postResponse');
+const InputTypes = require('../../domain/httpResponses/requestDetails/inputTypes');
 const Stopwatch = require('../../commonUtilities/stopwatch');
 const Logger = require('../../commonUtilities/logger/logger');
 
@@ -11,6 +12,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     Logger.log('Handling the GET request');
     const result = new GetResponse();
+    result.requestDetails.inputType = InputTypes.TEXT;
     const readme = fs.readFileSync('./src/routes/helloWorld/helloWorld.md', 'utf8');
     result.readme = readme;
     res.json(result);

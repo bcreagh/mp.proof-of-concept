@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 
-const helloWorld = require('./routes/helloWorld/helloWorld');
-const listRoutes = require('./routes/listRoutes/listRoutes');
-const topicReadme = require('./routes/topicReadme/topicReadme');
+const helloWorld = require('./routes/actions/helloWorld/helloWorld');
+const listRoutes = require('./routes/listActions');
+const topicReadme = require('./routes/topicReadme');
 const ConfigService = require('./services/configService');
 
 ConfigService.init();
@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/poc/hello-world', helloWorld);
-app.use('/poc/routes', listRoutes);
+app.use('/poc/actions', listRoutes);
 app.use('/poc/readme', topicReadme);
 
 app.listen(port, () => {

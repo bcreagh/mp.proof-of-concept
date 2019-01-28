@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 
-const ConfigService = require('../../services/configService');
+const ConfigService = require('../services/configService');
 
 const router = express.Router();
 

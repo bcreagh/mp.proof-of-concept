@@ -1,13 +1,12 @@
 const express = require('express');
-const fs = require('fs');
 
 const ConfigService = require('../services/configService');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const routes = ConfigService.getRoutes();
-    res.json(routes);
+    const actions = ConfigService.getActions();
+    res.json(actions);
 });
 
 module.exports = router;

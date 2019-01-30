@@ -9,8 +9,8 @@ class ConfigService {
         appInitialised = true;
     }
     
-    static getRoutes() {
-        return config.routes;
+    static getActions() {
+        return config.actions;
     }
 
     static getPort() {

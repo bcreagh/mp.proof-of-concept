@@ -1,9 +1,9 @@
 const express = require('express');
 const fs = require('fs');
 
-const GetResponse = require('../../../domain/httpResponses/getResponse');
-const PostResponse = require('../../../domain/httpResponses/postResponse');
-const InputTypes = require('../../../domain/httpResponses/requestDetails/inputTypes');
+const Action = require('../../../domain/action');
+const PostResponse = require('../../../domain/actionResult');
+const InputTypes = require('../../../domain/requestDetails/inputTypes');
 const Stopwatch = require('../../../commonUtilities/stopwatch');
 const Logger = require('../../../commonUtilities/logger/logger');
 const examples = require('./examples.json');
@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     Logger.log('Handling the GET request');
-    const result = new GetResponse();
+    const result = new Action();
     result.requestDetails.inputType = InputTypes.TEXT;
     result.examples = examples;
     const readme = fs.readFileSync('./src/routes/actions/helloWorld/helloWorld.md', 'utf8');

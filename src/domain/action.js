@@ -1,8 +1,8 @@
-class Action {
-    constructor() {
-        this.name = '';
-        this.description = '';
-        this.route = '';
-    }
+const RequestDetails = require('./requestDetails/requestDetails');
+
+function Action() {
+    this.readme = '';
+    this.examples = [];
+    this.requestDetails = new RequestDetails();
 }
 module.exports = Action;

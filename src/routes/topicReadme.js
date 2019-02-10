@@ -1,5 +1,5 @@
 const express = require('express');
-const Readme = require('../domain/readme');
+const Readme = require('../mp/domain/readme');
 const fs = require('fs');
 
 const router = express.Router();

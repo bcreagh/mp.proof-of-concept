@@ -1,11 +1,11 @@
 const express = require('express');
 const fs = require('fs');
 
-const Action = require('../../../domain/action');
-const PostResponse = require('../../../domain/actionResult');
-const InputTypes = require('../../../domain/requestDetails/inputTypes');
-const Stopwatch = require('../../../commonUtilities/stopwatch');
-const Logger = require('../../../commonUtilities/logger/logger');
+const Action = require('../../../mp/domain/action');
+const PostResponse = require('../../../mp/domain/actionResult');
+const InputTypes = require('../../../mp/domain/requestDetails/inputTypes');
+const Stopwatch = require('../../../mp/utilities/stopwatch');
+const Logger = require('../../../mp/utilities/logger/logger');
 const examples = require('./examples.json');
 
 const router = express.Router();

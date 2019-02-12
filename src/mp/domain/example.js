@@ -6,3 +6,4 @@ class Example {
         this.input = {};
     }
 }
+module.exports = Example;

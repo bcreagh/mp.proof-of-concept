@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 
+const ActionService = require('../../../services/actionService');
 const Action = require('../../../mp/domain/action');
 const PostResponse = require('../../../mp/domain/actionResult');
 const InputTypes = require('../../../mp/domain/requestDetails/inputTypes');
@@ -12,12 +13,9 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     Logger.log('Handling the GET request');
-    const result = new Action();
-    result.requestDetails.inputType = InputTypes.TEXT;
-    result.examples = examples;
-    const readme = fs.readFileSync('./src/routes/actions/helloWorld/helloWorld.md', 'utf8');
-    result.readme = readme;
-    res.json(result);
+    const action = ActionService.getAction('hello-world');
+    action.readme.data = fs.readFileSync('./src/routes/actions/helloWorld/helloWorld.md', 'utf8');
+    res.json(action);
 });
 
 router.post('/', (req, res) => {

@@ -1,11 +1,11 @@
 const express = require('express');
 
-const ConfigService = require('../services/configService');
+const ActionService = require('../services/actionService');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const actions = ConfigService.getActions();
+    const actions = ActionService.getAllActions();
     res.json(actions);
 });
 

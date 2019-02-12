@@ -5,8 +5,10 @@ const helloWorld = require('./routes/actions/helloWorld/helloWorld');
 const listRoutes = require('./routes/listActions');
 const topicReadme = require('./routes/topicReadme');
 const ConfigService = require('./services/configService');
+const ActionService = require('./services/actionService');
 
 ConfigService.init();
+ActionService.init();
 const app = express();
 const port = ConfigService.getPort();
 

@@ -5,6 +5,7 @@ function Action() {
     this.name = '';
     this.description = '';
     this.route = '';
+    this.instructions = '';
     this.readme = new Readme();
     this.examples = [];
     this.requestDetails = new RequestDetails();

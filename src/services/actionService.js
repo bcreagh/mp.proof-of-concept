@@ -30,6 +30,7 @@ class ActionService {
         clone.name = action.name;
         clone.description = action.description;
         clone.route = action.route;
+        clone.instructions = action.instructions;
         action.examples.forEach(example => {
             const exampleClone = new Example();
             exampleClone.name = example.name;

@@ -22,7 +22,7 @@
         "requestDetails": {
             "httpMethod": "POST",
             "inputType": "JSON",
-            "inputTemplate": ""
+            "inputTemplate": "Brian"
         }
     }
 ]

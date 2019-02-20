@@ -21,7 +21,7 @@
         ],
         "requestDetails": {
             "httpMethod": "POST",
-            "inputType": "JSON",
+            "inputType": "TEXT",
             "inputTemplate": "Brian"
         }
     }

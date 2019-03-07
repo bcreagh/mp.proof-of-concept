@@ -2,12 +2,9 @@ const express = require('express');
 const fs = require('fs');
 
 const ActionService = require('../../../services/actionService');
-const Action = require('../../../mp/domain/action');
 const PostResponse = require('../../../mp/domain/actionResult');
-const InputTypes = require('../../../mp/domain/requestDetails/inputTypes');
 const Stopwatch = require('../../../mp/utilities/stopwatch');
 const Logger = require('../../../mp/utilities/logger/logger');
-const examples = require('./examples.json');
 
 const router = express.Router();
 
@@ -35,7 +32,7 @@ router.post('/', (req, res) => {
 router.post('/with-route', (req, res) => {
     const result = new PostResponse();
     const stopwatch = new Stopwatch();
-    const input = `, this response is from the 'with-route' route!`;
+    const input = `- this response is from the 'with-route' route!`;
 
     Logger.log('Handling the POST request', result);
     stopwatch.start();

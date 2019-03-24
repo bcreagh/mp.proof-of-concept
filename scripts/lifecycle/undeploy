@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker stop proof-of-concept
+docker rm proof-of-concept
